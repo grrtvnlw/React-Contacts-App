@@ -15,13 +15,13 @@ export default class ContactList extends Component {
         { this.props.contactList.map((contact, index) => {
           return (
             <ul>
-            <li>{ contact.name }</li>
-            <li>{ contact.email }</li>
-            <li>{ contact.phone }</li>
-            <li>{ contact.address }</li>
-            <li>{ contact.city }</li>
-            <li>{ contact.state }</li>
-            <li>{ contact.zip }</li>
+              <li>{ contact.name }</li>
+              <li>{ contact.email }</li>
+              <li>{ contact.phone }</li>
+              <li>{ contact.address }</li>
+              <li>{ contact.city }</li>
+              <li>{ contact.state }</li>
+              <li>{ contact.zip }</li>
             </ul>
           )
           })
