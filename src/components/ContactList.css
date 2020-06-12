@@ -1,0 +1,54 @@
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  /* border: 1px solid blue; */
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  border: 1px solid red;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  align-self: flex-start;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px
+}
+
+input {
+  width: 400px;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+button {
+  border-radius: 5px;
+}
