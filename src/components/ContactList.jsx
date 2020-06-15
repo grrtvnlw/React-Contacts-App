@@ -9,21 +9,23 @@ export default class ContactList extends Component {
     super(props);
   }
 
+  removeContact = (index) => {
+    this.props.delete(index);
+  }
+
+  updateContact = (index) => {
+      this.props.update(index);
+  }
+
   render() {
     return (
       <div>
         <h2>Contact List</h2>
         { this.props.contactList.map((contact, index) => {
           return (
-            <ul>
+            <ul className="ulBorder">
               <li className="contactName">{ contact.name }</li>
-              <li className="mt-3"><ContactCard contact={ this.props.contactList }/></li>
-              {/* <li>{ contact.email }</li>
-              <li>{ contact.phone }</li>
-              <li>{ contact.address }</li>
-              <li>{ contact.city }</li>
-              <li>{ contact.state }</li>
-              <li>{ contact.zip }</li> */}
+              <li className="mt-3 mb-3"><ContactCard contact={contact} key={index} id={index} delete={this.removeContact} update={this.updateContact}/></li>
             </ul>
           )
           })

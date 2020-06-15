@@ -30,18 +30,18 @@ export default class ContactCard extends Component {
       }
       return (
         <div>
-          <div>
-            <b>{this.props.contact.name}</b>
+          <div> 
             <ul className={innerClass}>
-              <li>email: {this.props.contact.email}</li>
-              <li>phone number: {this.props.contact.phone}</li>
-              <li>address: {this.props.contact.address}</li>
-              <li>city: {this.props.contact.city}</li>
-              <li>state: {this.props.contact.state}</li>
-              <li className="mb-3">zip code: {this.props.contact.zip}</li>
+              {console.log(this.props.contact.email)}
+              <li><b>email:</b> {this.props.contact.email}</li>
+              <li><b>phone number:</b> {this.props.contact.phone}</li>
+              <li><b>address</b> {this.props.contact.address}</li>
+              <li><b>city:</b> {this.props.contact.city}</li>
+              <li><b>state:</b> {this.props.contact.state}</li>
+              <li className="mb-3"><b>zip code:</b> {this.props.contact.zip}</li>
             </ul>
           </div>
-          <div>
+          <div className="center">
             <button className="btn btn-outline-secondary btn-sm" onClick={this.toggle}>Open</button><button className="btn btn-outline-secondary btn-sm" onClick={this.updateCard}>Update</button><button className="btn btn-outline-secondary btn-sm" onClick={this.deleteContactCard}>X</button>
           </div>
         </div >

@@ -4,13 +4,26 @@ ul {
   align-items: center;
   list-style-type: none;
   text-align: left;
-  border: 1px solid green;
-  width: 20%;
   margin: 0 auto;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.ulBorder {
+  border: 1px solid dodgerblue;
+  border-radius: 5px;
+  width: 30%;
+} 
+
 li {
-  margin-left: -50px;
+  margin-left: -40px;
 }
 
 .contactName {
