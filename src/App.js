@@ -43,6 +43,13 @@ class App extends React.Component {
     })
   }
 
+  favorites = () => {
+    const filteredArray = this.state.contacts.filter((contact) => contact.favorite === true);
+    this.setState({
+      contacts: filteredArray
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -50,7 +57,7 @@ class App extends React.Component {
           <h1>Contacts App</h1>
         </header>
         <ContactForm onSubmit={ this.onNewContact } updateContact={ this.state.editMe }/>
-        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement } updateContact={ this.updateElement } handleFavorite={ this.toggle }/>
+        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement } updateContact={ this.updateElement } handleFavorite={ this.toggle } renderFavorites={ this.favorites }/>
       </div>
     );
   }
