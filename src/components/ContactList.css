@@ -79,3 +79,17 @@ h2 {
 button {
   border-radius: 5px;
 }
+
+.favorites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoriteMe {
+  margin-left: 10px;
+}
+
+.favoriteMe:hover {
+  cursor: pointer;
+}

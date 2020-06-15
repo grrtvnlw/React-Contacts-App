@@ -14,7 +14,8 @@ export default class ContactForm extends Component {
       address: '123 John Doe Way',
       city: 'Atlanta',
       state: 'GA',
-      zip: 30326
+      zip: 30326,
+      favorite: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +37,8 @@ export default class ContactForm extends Component {
       address: '',
       city: '',
       state: '',
-      zip: null
+      zip: null,
+      favorite: false
     });
   }
 
