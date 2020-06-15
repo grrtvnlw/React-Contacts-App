@@ -9,7 +9,8 @@ class App extends React.Component {
     super();
     
     this.state = {
-      contacts: []
+      contacts: [],
+      editMe: []
     }
   }
 
@@ -26,14 +27,22 @@ class App extends React.Component {
     })
   }
 
+  updateElement = (index) => {
+    const editMe = this.state.contacts[index];
+    this.removeElement(index)
+    this.setState({
+      editMe: editMe
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1>Contacts App</h1>
         </header>
-        <ContactForm onSubmit={ this.onNewContact }/>
-        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement }/>
+        <ContactForm onSubmit={ this.onNewContact } updateContact={ this.state.editMe }/>
+        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement } updateContact={ this.updateElement }/>
       </div>
     );
   }

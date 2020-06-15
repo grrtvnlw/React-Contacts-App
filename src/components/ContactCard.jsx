@@ -41,7 +41,9 @@ export default class ContactCard extends Component {
             </ul>
           </div>
           <div className="center">
-            <button className="btn btn-outline-secondary btn-sm" onClick={this.toggle}>Open</button><button className="btn btn-outline-secondary btn-sm" onClick={this.updateCard}>Update</button><button className="btn btn-outline-secondary btn-sm" onClick={this.deleteContactCard}>X</button>
+            <button className="btn btn-outline-secondary btn-sm" onClick={this.toggle}>Open</button>
+            <button className="btn btn-outline-secondary btn-sm" onClick={this.updateCard}>Update</button>
+            <button className="btn btn-outline-secondary btn-sm" onClick={this.deleteContactCard}>X</button>
           </div>
         </div >
       )

@@ -40,11 +40,26 @@ export default class ContactForm extends Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.updateContact !== this.props.updateContact && this.props.updateContact.name !== this.state.name) {
+      let contact = this.props.updateContact
+      this.setState({
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone,
+        address: contact.address,
+        city: contact.city,
+        state: contact.zip,
+        zip: contact.zip
+      })
+    }
+  }
+
   render() {
     return (
       <div className="container">
         <h2>Contact Form</h2>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={ this.handleSubmit } contactFormPopulate={ this.contactToUpdate }>
           <div className="field">
             <label for="name">Name</label>
             <input type="text" name="name" value={ this.state.name } onChange={e => {
