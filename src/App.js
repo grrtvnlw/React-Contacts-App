@@ -35,6 +35,14 @@ class App extends React.Component {
     })
   }
 
+  toggle = (index) => {
+    let newContacts = [...this.state.contacts];
+    newContacts[index].favorite = !newContacts[index].favorite;
+    this.setState({ 
+      contacts: newContacts,
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,7 +50,7 @@ class App extends React.Component {
           <h1>Contacts App</h1>
         </header>
         <ContactForm onSubmit={ this.onNewContact } updateContact={ this.state.editMe }/>
-        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement } updateContact={ this.updateElement }/>
+        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement } updateContact={ this.updateElement } handleFavorite={ this.toggle }/>
       </div>
     );
   }
