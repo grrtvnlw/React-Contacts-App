@@ -32,7 +32,6 @@ export default class ContactCard extends Component {
         <div>
           <div> 
             <ul className={innerClass}>
-              {console.log(this.props.contact.email)}
               <li><b>email:</b> {this.props.contact.email}</li>
               <li><b>phone number:</b> {this.props.contact.phone}</li>
               <li><b>address</b> {this.props.contact.address}</li>

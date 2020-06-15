@@ -17,9 +17,9 @@ ul {
 }
 
 .ulBorder {
-  border: 1px solid dodgerblue;
+  border: 1px solid lightblue;
   border-radius: 5px;
-  width: 30%;
+  width: 40%;
 } 
 
 li {
@@ -47,10 +47,10 @@ form {
 }
 
 .container {
-  border: 1px solid red;
   width: 100vw;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 label {

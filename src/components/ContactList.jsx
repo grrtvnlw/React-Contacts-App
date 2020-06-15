@@ -9,14 +9,6 @@ export default class ContactList extends Component {
     super(props);
   }
 
-  removeContact = (index) => {
-    this.props.delete(index);
-  }
-
-  updateContact = (index) => {
-      this.props.update(index);
-  }
-
   render() {
     return (
       <div>
@@ -25,7 +17,7 @@ export default class ContactList extends Component {
           return (
             <ul className="ulBorder">
               <li className="contactName">{ contact.name }</li>
-              <li className="mt-3 mb-3"><ContactCard contact={contact} key={index} id={index} delete={this.removeContact} update={this.updateContact}/></li>
+              <li className="mt-3 mb-3"><ContactCard contact={contact} key={index} id={index} delete={this.props.removeContact} update={this.updateContact}/></li>
             </ul>
           )
           })

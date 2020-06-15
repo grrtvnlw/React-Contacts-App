@@ -19,6 +19,13 @@ class App extends React.Component {
     })
   }
 
+  removeElement = (index) => {
+    const filteredArray = this.state.contacts.filter((_, i) => i !== index);
+    this.setState({
+      contacts: filteredArray
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,7 +33,7 @@ class App extends React.Component {
           <h1>Contacts App</h1>
         </header>
         <ContactForm onSubmit={ this.onNewContact }/>
-        <ContactList contactList={ this.state.contacts }/>
+        <ContactList contactList={ this.state.contacts } removeContact={ this.removeElement }/>
       </div>
     );
   }
