@@ -1,6 +1,21 @@
 ul {
-  text-align: center;
-  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  text-align: left;
+  border: 1px solid green;
+  width: 20%;
+  margin: 0 auto;
+}
+
+li {
+  margin-left: -50px;
+}
+
+.contactName {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 form {
@@ -9,7 +24,6 @@ form {
   flex-direction: column;
   width: 80%;
   align-items: center;
-  /* border: 1px solid blue; */
   border-radius: 5px;
   background-color: whitesmoke;
 }

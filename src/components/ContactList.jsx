@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import './ContactList.css';
+import ContactCard from './ContactCard';
 import { Button, Col, Row } from 'react-bootstrap'
 
 export default class ContactList extends Component {
@@ -15,13 +16,14 @@ export default class ContactList extends Component {
         { this.props.contactList.map((contact, index) => {
           return (
             <ul>
-              <li>{ contact.name }</li>
-              <li>{ contact.email }</li>
+              <li className="contactName">{ contact.name }</li>
+              <li className="mt-3"><ContactCard contact={ this.props.contactList }/></li>
+              {/* <li>{ contact.email }</li>
               <li>{ contact.phone }</li>
               <li>{ contact.address }</li>
               <li>{ contact.city }</li>
               <li>{ contact.state }</li>
-              <li>{ contact.zip }</li>
+              <li>{ contact.zip }</li> */}
             </ul>
           )
           })
