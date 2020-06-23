@@ -9,7 +9,8 @@ export default class ContactList extends Component {
     super(props);
 
     this.state = {
-      displayFavorite: false
+      displayFavorite: false,
+      search: ''
     }
   }
 
@@ -17,8 +18,21 @@ export default class ContactList extends Component {
     this.setState({ displayFavorite: !this.state.displayFavorite })
   }
 
-  searchResults = () => {
-    
+  searchChange = (e) => {
+    let searchResults = this.props.contactList.filter(contact => {
+      return contact.name.includes(e.target.value)
+    })
+    this.setState({
+      search: e.target.value,
+      searchResults: searchResults
+    })
+  }
+
+  searchResults = (e) => {
+    e.preventDefault();
+    this.setState({
+      search: ''
+    })
   }
 
   render() {
@@ -33,12 +47,12 @@ export default class ContactList extends Component {
           <div className="search">
             <form onSubmit={this.searchResults}>
               <label for="search">Search for a contact</label>
-              <input type="text" name="search"></input>
+              <input type="text" name="search" placeholder="Search" value={this.state.search} onChange={this.searchChange}></input>
               <button type="submit">Search</button>
             </form>
           </div>
         </header>
-        { this.state.displayFavorite 
+        { (this.state.search === '') && (this.state.displayFavorite 
         ? filteredArray.map((contact, index) => {
             return (
               <ul className="ulBorder" key={index}>
@@ -56,7 +70,17 @@ export default class ContactList extends Component {
               <li className="mt-3 mb-3"><ContactCard contact={contact} key={index} id={index} delete={this.props.removeContact} update={this.props.updateContact}/></li>
             </ul>
           )
-          })
+          }))
+        }
+        { this.state.search !== '' && this.state.searchResults.map((contact, index) => {
+            return (
+              <ul className="ulBorder" key={index}>
+                <li className="contactName">{ contact.name } { contact.favorite ? <span className="favoriteMe" onClick={ () => this.props.handleFavorite(index) }>⭐️</span> : <span className="favoriteMe" onClick={ () => this.props.handleFavorite(index) }>✩</span> }</li>
+                <li>{contact.city}, {contact.state}</li>
+                <li className="mt-3 mb-3"><ContactCard contact={contact} key={index} id={index} delete={this.props.removeContact} update={this.props.updateContact}/></li>
+              </ul>
+            )
+          }) 
         }
       </div>
     )
