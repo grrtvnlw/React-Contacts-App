@@ -17,13 +17,26 @@ export default class ContactList extends Component {
     this.setState({ displayFavorite: !this.state.displayFavorite })
   }
 
+  searchResults = () => {
+    
+  }
+
   render() {
-    { this.props.contactList.sort((a, b) => a.name.localeCompare(b.name))}
+    this.props.contactList.sort((a, b) => a.name.localeCompare(b.name))
+
     let filteredArray = this.props.contactList.filter((contact) => contact.favorite === true)
+    
     return (
       <div className="mb-5">
         <header className="favorites">
-    <h2>Contact List</h2><button className="btn btn-primary p-1 ml-2 mt-3" onClick={ this.toggle }>{ this.state.displayFavorite ? 'All' : 'Favorites'}</button>
+          <h2>Contact List</h2><button className="btn btn-primary p-1 ml-2 mt-3" onClick={ this.toggle }>{ this.state.displayFavorite ? 'All' : 'Favorites'}</button>
+          <div className="search">
+            <form onSubmit={this.searchResults}>
+              <label for="search">Search for a contact</label>
+              <input type="text" name="search"></input>
+              <button type="submit">Search</button>
+            </form>
+          </div>
         </header>
         { this.state.displayFavorite 
         ? filteredArray.map((contact, index) => {

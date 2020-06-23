@@ -82,6 +82,7 @@ button {
 
 .favorites {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -92,4 +93,16 @@ button {
 
 .favoriteMe:hover {
   cursor: pointer;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search label {
+  margin: 0 auto;
 }
